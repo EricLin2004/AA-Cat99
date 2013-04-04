@@ -1,0 +1,16 @@
+<h1>Cats</h1>
+<%= "No cats!" if @cats.empty? %>
+
+<ul class="thumbnails">
+  <% @cats.each do |cat| %>
+  <li class="span3">
+    <a href="<%= cat_path(cat) %>" class="thumbnail">
+      <img src="<%= cat.image %>" alt="">
+    </a>
+    <h3><%= cat.name %></h3>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to  "Create Cat", new_cat_path %> <br>
+<%= link_to  "Cat Rentals", cat_rental_requests_path %>

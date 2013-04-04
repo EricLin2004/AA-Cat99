@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cat_id: 1
+  approved: false
+  rental_start: 2013-04-03 14:53:27
+  rental_end: 2013-04-03 14:53:27
+
+two:
+  cat_id: 1
+  approved: false
+  rental_start: 2013-04-03 14:53:27
+  rental_end: 2013-04-03 14:53:27

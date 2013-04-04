@@ -1,0 +1,9 @@
+<h1>Cat Rentals</h1>
+<%= "No requests!" if @cat_rental_request.empty? %>
+<ul>
+  <% @cat_rental_request.each do |request| %>
+  <li><%= link_to "Request #{request.id}: #{request.cat.name}", cat_rental_request_path(request) %></li>
+  <% end %>
+</ul>
+
+<%= link_to  "<< Cats", cats_path %>

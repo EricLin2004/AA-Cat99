@@ -1,0 +1,21 @@
+<h1>Cat Rental Request</h1>
+
+<h1><%= @cat_rental_request.cat.name %> for $<%= @cat_rental_request.cat.price %></h1>
+<p><%= image_tag @cat_rental_request.cat.image.url, class: "cat-images" %></p>
+
+<p>
+  Start Date: <%= @cat_rental_request.rental_start %>
+</p>
+<p>
+  End Date: <%= @cat_rental_request.rental_end %>
+</p>
+
+<% if @cat_rental_request.approved.nil? %>
+<%= link_to "Approve/Reject", edit_cat_rental_request_path(@cat_rental_request) %>
+<% else %>
+Status: <%= @cat_rental_request.approved ? "Approved" : "Rejected" %>
+<% end %>
+
+<br>
+<br>
+<%= link_to "Back", :back %>

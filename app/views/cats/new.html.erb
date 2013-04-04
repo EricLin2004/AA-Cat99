@@ -1,0 +1,25 @@
+<%= form_for(@cat, html: {multipart: true}) do |f| %>
+
+<p>
+  <%= f.label :image, "Attach Cat" %><br />
+  <%= f.file_field :image %>
+</p>
+<p>
+  <%= f.label :name, "Cat name" %><br />
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :location, "Cat location" %><br />
+  <%= f.text_field :location %>
+</p>
+<p>
+  <%= f.label :price, "Price per hour" %><br />
+  <%= f.text_field :price %>
+</p>
+<p>
+  <%= f.submit %>
+  <%= link_to "Cancel", :back, class: "btn" %>
+</p>
+
+<% end %>
+

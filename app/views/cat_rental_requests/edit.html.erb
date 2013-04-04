@@ -1,0 +1,26 @@
+<h1>Cat Rental Request</h1>
+<p>for <%= @cat_rental_request.cat.name %></p>
+<p>
+  Start Date: <%= @cat_rental_request.rental_start %>
+</p>
+<p>
+  End Date: <%= @cat_rental_request.rental_end %>
+</p>
+
+
+<% if @cat_rental_request.approved.nil? %>
+
+<%= form_for(@cat_rental_request) do |f| %>
+  Approve?
+  <input type="radio" name="cat_rental_request[approved]" value="true">Yes
+  <input type="radio" name="cat_rental_request[approved]" value="false">No
+  <input type="submit">
+<% end %>
+
+<% elsif @cat_rental_request.approved %>
+APPROVED!
+
+<% else %>
+REJECTED!
+
+<% end %>

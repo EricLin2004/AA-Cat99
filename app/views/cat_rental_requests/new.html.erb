@@ -1,0 +1,22 @@
+<%= form_for(@cat_rental_request) do |f| %>
+
+<p>
+  <%= f.label :cat_id, "Cat ID" %><br />
+  <%= f.text_field :cat_id, size: 5, value: @cat_id, readonly: true %>
+  <!--input id="cat_rental_request_cat_id" name="cat_rental_request[cat_id]" size="5" type="text" disabled="disabled" value="<%= @cat_id %>"/-->
+</p>
+<p>
+  <%= f.label :rental_start, "Start Date/Time" %><br />
+  <%= f.date_select :rental_start %>
+  <%= f.time_select :rental_start, :ignore_date => true  %>
+</p>
+<p>
+  <%= f.label :rental_end, "End Date/Time" %><br />
+  <%= f.date_select :rental_end %>
+  <%= f.time_select :rental_end, :ignore_date => true  %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>

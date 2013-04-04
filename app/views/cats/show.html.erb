@@ -1,0 +1,16 @@
+<h1><%= @cat.name %> ONLY $<%= @cat.price %>!!!!!!*</h1>
+<p>from <%= @cat.location %></p>
+
+<%= link_to "Rent this cat NOW!!!", new_cat_rental_request_path + "?id=" + @cat.id.to_s%>
+
+<p><%= image_tag @cat.image.url, class: "cat-images" %></p>
+
+<% @cat.cat_rental_requests.each do |request| %>
+
+<p>Start: <%= request.rental_start %></p>
+<p>End: <%= request.rental_end %></p>
+<p>Status: <%= request.approved.nil? ? 'Awaiting Approval' : (request.approved ? 'Approved' : 'Rejected')%></p>
+
+<% end %>
+
+<small>* per hour</small>
